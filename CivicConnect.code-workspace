@@ -1,0 +1,72 @@
+{
+  "folders": [
+    {
+      "name": "🏛️ CivicConnect (Root)",
+      "path": "."
+    },
+    {
+      "name": "☕ Backend (Spring Boot)",
+      "path": "backend"
+    },
+    {
+      "name": "⚛️ Frontend (React Vite)",
+      "path": "frontend"
+    }
+  ],
+  "settings": {
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "java.compile.nullAnalysis.mode": "automatic",
+    "terminal.integrated.defaultProfile.windows": "Command Prompt"
+  },
+  "tasks": {
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Start Backend (Spring Boot)",
+        "type": "shell",
+        "command": "cmd.exe",
+        "args": ["/c", ".\\mvnw.cmd spring-boot:run"],
+        "options": {
+          "cwd": "${workspaceFolder:☕ Backend (Spring Boot)}"
+        },
+        "isBackground": true,
+        "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "focus": false,
+          "panel": "dedicated",
+          "group": "servers"
+        }
+      },
+      {
+        "label": "Start Frontend (React Vite)",
+        "type": "shell",
+        "command": "cmd.exe",
+        "args": ["/c", "npm.cmd run dev"],
+        "options": {
+          "cwd": "${workspaceFolder:⚛️ Frontend (React Vite)}"
+        },
+        "isBackground": true,
+        "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "focus": false,
+          "panel": "dedicated",
+          "group": "servers"
+        }
+      },
+      {
+        "label": "Run Full Application (Backend + Frontend)",
+        "dependsOn": [
+          "Start Backend (Spring Boot)",
+          "Start Frontend (React Vite)"
+        ],
+        "dependsOrder": "parallel",
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        }
+      }
+    ]
+  }
+}

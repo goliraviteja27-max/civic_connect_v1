@@ -1,0 +1,27 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "☕ Run Backend (Spring Boot Java)",
+      "request": "launch",
+      "mainClass": "com.civicconnect.CivicConnectBackendApplication",
+      "projectName": "civic-connect-backend",
+      "cwd": "${workspaceFolder}/backend"
+    },
+    {
+      "name": "🌐 Launch Frontend in Edge",
+      "type": "msedge",
+      "request": "launch",
+      "url": "http://localhost:5173",
+      "webRoot": "${workspaceFolder}/frontend"
+    },
+    {
+      "name": "🌐 Launch Frontend in Chrome",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:5173",
+      "webRoot": "${workspaceFolder}/frontend"
+    }
+  ]
+}
